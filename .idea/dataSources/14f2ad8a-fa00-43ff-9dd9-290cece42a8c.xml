@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>13267</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="thomasbjerke">
+      <ObjectId>16385</ObjectId>
+    </database>
+    <database id="4" parent="1" name="conferencedb_test">
+      <ObjectId>24578</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <role id="5" parent="1" name="conference">
+      <ObjectId>24577</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <role id="12" parent="1" name="thomasbjerke">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="13" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-10-31.11:09:09.476</IntrospectionTimestamp>
+      <IntrospectionStateNumber>735</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="14" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="18" parent="2" name="information_schema">
+      <ObjectId>12976</ObjectId>
+    </schema>
+    <schema id="19" parent="4" name="public">
+      <ObjectId>2200</ObjectId>
+      <Current>1</Current>
+    </schema>
+    <schema id="20" parent="4" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="21" parent="4" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="22" parent="4" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="23" parent="4" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="24" parent="4" name="information_schema">
+      <ObjectId>12976</ObjectId>
+    </schema>
+    <sequence id="25" parent="13" name="conference_talk_id_seq">
+      <ObjectId>33200</ObjectId>
+      <StateNumber>735</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="26" parent="13" name="conference_talk">
+      <ObjectId>33202</ObjectId>
+      <StateNumber>735</StateNumber>
+    </table>
+    <table id="27" parent="13" name="flyway_schema_history">
+      <ObjectId>33190</ObjectId>
+      <StateNumber>734</StateNumber>
+    </table>
+    <column id="28" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <DefaultExpression>nextval(&apos;conference_talk_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>conference_talk_id_seq</SequenceName>
+    </column>
+    <column id="29" parent="26" name="title">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="26" name="description">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="31" parent="26" name="conference_talk_pkey">
+      <ObjectId>33209</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="26" name="conference_talk_pkey">
+      <ObjectId>33210</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>conference_talk_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="27" name="installed_rank">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="34" parent="27" name="version">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="35" parent="27" name="description">
+      <Position>3</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="27" name="type">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="37" parent="27" name="script">
+      <Position>5</Position>
+      <DataType>varchar(1000)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="38" parent="27" name="checksum">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>734</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="39" parent="27" name="installed_by">
+      <Position>7</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="40" parent="27" name="installed_on">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="41" parent="27" name="execution_time">
+      <Position>9</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="42" parent="27" name="success">
+      <Position>10</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>734</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="43" parent="27" name="flyway_schema_history_pk">
+      <ObjectId>33197</ObjectId>
+      <ColNames>installed_rank</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="27" name="flyway_schema_history_s_idx">
+      <ObjectId>33199</ObjectId>
+      <ColNames>success</ColNames>
+    </index>
+    <key id="45" parent="27" name="flyway_schema_history_pk">
+      <ObjectId>33198</ObjectId>
+      <ColNames>installed_rank</ColNames>
+      <UnderlyingIndexName>flyway_schema_history_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
